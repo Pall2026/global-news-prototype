@@ -92,7 +92,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: 4,
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800",
+    image: "src/assets/images/regenerated_image_1778330281401.png",
     body: ""
   },
   {
@@ -111,7 +111,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: 5,
-    image: "https://images.unsplash.com/photo-1578319400155-ac9018597375?auto=format&fit=crop&q=80&w=800",
+    image: "src/assets/images/regenerated_image_1778330281401.png",
     body: ""
   },
   {
@@ -131,7 +131,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: null,
-    image: "https://images.unsplash.com/photo-1519389950473-acc7b968b601?auto=format&fit=crop&q=80&w=800",
+    image: "src/assets/images/regenerated_image_1778330274846.png",
     body: "The green hydrogen initiative marks a radical departure from traditional centralized power plants, aiming for a zero-emission urban model by 2040."
   },
   {
@@ -168,7 +168,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: null,
-    image: "https://images.unsplash.com/photo-1549110667-31320473a21e?auto=format&fit=crop&q=80&w=800",
+    image: "src/assets/images/regenerated_image_1778330538230.png",
     body: "The AI Act 2.0 introduces strict 'digital border' requirements that could fragment the global internet as we know it."
   },
   {
@@ -227,7 +227,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: null,
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800",
+    image: "src/assets/images/regenerated_image_1778333583200.png",
     body: "Standing at the edge of the excavation, the scale of Saudi Arabia's vision is both terrifying and awesome. It is a physical manifestation of a nation's desire to rewrite its economic destiny in stone and steel."
   },
   {
