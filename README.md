@@ -1,9 +1,7 @@
 1. Core Concept
 The app serves as a "visual prototype" for a modern media house. It prioritizes clarity, regional authority, and a "clean" editorial aesthetic. The name "Bharat Lens" signifies its focus on looking at the world through an Indian and broader Global South perspective, often highlighting stories that traditional Western media might relegate to footnotes.
 
-Live Demo - https://global-news-prototype.vercel.app/
-
-3. Main Features & Pages
+2. Main Features & Pages
 Dynamic Home Grid: A sophisticated multi-colum landing page that intelligently organizes hero sections, editor's picks, and regional spotlights.
 Regional Desks: Specialized navigation for India, Americas, Europe, Africa, and Asia, featuring nested sub-region filtering (e.g., North America, South Asia).
 Live Updates (Pulse): A real-time, time-synchronized news ticker that tracks breaking global events with a font-mono IST (India Standard Time) display.
@@ -39,6 +37,8 @@ HomeGrid: A complex layout manager that organizes different content "streams" (L
 VisualReels: An innovative way to present news through image-led cards with backdrop blurs and integrated interaction logos.
 Header & NavDropdown: A sophisticated multi-level navigation system that allows drilling down from major regions to specific sub-regions and countries.
 ArticleCard: A polymorphic component that adapts its layout (compact vs. full) based on where it's being rendered.
+
+Live Demo - https://global-news-prototype.vercel.app/
 
 
 https://github.com/user-attachments/assets/e3d9f44f-5c07-483f-aed4-68fc440c24c8
