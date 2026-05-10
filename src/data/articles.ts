@@ -16,7 +16,7 @@ export const articles = [
     isHero: true,
     isEditorPick: false,
     pulseRank: null,
-    image: "/src/assets/images/regenerated_image_1778333424993.png",
+    image: "/images/regenerated_image_1778333424993.png",
     body: "When the announcement came out of Washington on Wednesday morning, the response in South Block was studied silence — the kind that does not mean indifference.\n\nFor New Delhi, the question is not whether the tariff regime will hold; it is whether the United States now reads middle-power hedging as defection or as strategy. The shift indicates a broader recalibration of how economic statecraft is employed in the Pacific theater, often leaving regional partners to decipher intent from footnotes rather than direct dialogue."
   },
   {
@@ -35,7 +35,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: 1,
-    image: "/src/assets/images/regenerated_image_1778330265102.png",
+    image: "/images/regenerated_image_1778330265102.png",
     body: ""
   },
   {
@@ -73,7 +73,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: 3,
-    image: "/src/assets/images/regenerated_image_1778330281401.png",
+    image: "/images/regenerated_image_1778330281401.png",
     body: ""
   },
   {
@@ -92,7 +92,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: 4,
-    image: "src/assets/images/regenerated_image_1778330281401.png",
+    image: "/images/regenerated_image_1778330281401.png",
     body: ""
   },
   {
@@ -111,7 +111,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: 5,
-    image: "src/assets/images/regenerated_image_1778330281401.png",
+    image: "/images/regenerated_image_1778330281401.png",
     body: ""
   },
   {
@@ -131,7 +131,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: null,
-    image: "src/assets/images/regenerated_image_1778330274846.png",
+    image: "/images/regenerated_image_1778330274846.png",
     body: "The green hydrogen initiative marks a radical departure from traditional centralized power plants, aiming for a zero-emission urban model by 2040."
   },
   {
@@ -150,7 +150,7 @@ export const articles = [
     isHero: false,
     isEditorPick: true,
     pulseRank: null,
-    image: "/src/assets/images/regenerated_image_1778336887857.png",
+    image: "/images/regenerated_image_1778336887857.png",
     body: "What started as a mobile-money revolution is now a sophisticated banking layer that is reshaping how the continent interacts with global capital flows."
   },
   {
@@ -168,7 +168,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: null,
-    image: "src/assets/images/regenerated_image_1778330538230.png",
+    image: "/images/regenerated_image_1778330538230.png",
     body: "The AI Act 2.0 introduces strict 'digital border' requirements that could fragment the global internet as we know it."
   },
   {
@@ -188,7 +188,7 @@ export const articles = [
     isHero: false,
     isEditorPick: true,
     pulseRank: null,
-    image: "/src/assets/images/regenerated_image_1778336891759.png",
+    image: "/images/regenerated_image_1778336891759.png",
     body: "The collaboration highlights a growing trend of Global South nations sharing high-tech solutions for local problems without Western intermediation."
   },
   {
@@ -207,7 +207,7 @@ export const articles = [
     isHero: false,
     isEditorPick: true,
     pulseRank: null,
-    image: "/src/assets/images/regenerated_image_1778336895138.png",
+    image: "/images/regenerated_image_1778336895138.png",
     body: "The traffic on Outer Ring Road has become more than a meme; it is a structural inhibitor to the very productivity the city promises. As the Silicon Plateau expands, the infrastructure beneath it remains fixed in an era that did not anticipate this density.\n\nFrom a Global South perspective, the Bengaluru experience is a cautionary tale of rapid urbanization disconnected from civic planning. While the software exports reach record highs, the daily commute for those building it becomes an exercise in endurance. It remains to be seen if the new metro corridors can alleviate a congestion that is now deeply baked into the city's geography."
   },
   {
@@ -227,7 +227,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: null,
-    image: "src/assets/images/regenerated_image_1778333583200.png",
+    image: "/images/regenerated_image_1778333583200.png",
     body: "Standing at the edge of the excavation, the scale of Saudi Arabia's vision is both terrifying and awesome. It is a physical manifestation of a nation's desire to rewrite its economic destiny in stone and steel."
   },
   {
@@ -247,7 +247,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: null,
-    image: "/src/assets/images/regenerated_image_1778330536230.png",
+    image: "/images/regenerated_image_1778330536230.png",
     body: "The landscape of American politics is shifting under the weight of localized grievances that used to stay at the municipal level but are now being nationalized through digital networks. What we are seeing in Pennsylvania and Ohio is a preview of a possible 2028 reality."
   },
   {
@@ -267,7 +267,7 @@ export const articles = [
     isHero: false,
     isEditorPick: true,
     pulseRank: null,
-    image: "/src/assets/images/regenerated_image_1778330538230.png",
+    image: "/images/regenerated_image_1778330538230.png",
     body: "The challenge of the 'duck curve'—the massive overproduction of solar in the midday followed by a sharp drop at sunset—is being solved by a decentralized battery initiative that has turned the tide for California's energy independence."
   },
   {
@@ -287,7 +287,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: null,
-    image: "/src/assets/images/regenerated_image_1778337189334.png",
+    image: "/images/regenerated_image_1778337189334.png",
     body: "Quantum computing requires a level of physical shielding and laboratory infrastructure that standard co-working spaces cannot provide. As result, the industry is gravitating towards the East Coast's established scientific corridors."
   },
   {
@@ -307,7 +307,7 @@ export const articles = [
     isHero: false,
     isEditorPick: true,
     pulseRank: null,
-    image: "/src/assets/images/regenerated_image_1778333580622.png",
+    image: "/images/regenerated_image_1778333580622.png",
     body: "High-frequency trading was the first wave. The second wave is causal AI, which can explain why a market shift is happening, allowing firms to react before the trend fully manifests."
   },
   {
@@ -327,7 +327,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: null,
-    image: "/src/assets/images/regenerated_image_1778333583200.png",
+    image: "/images/regenerated_image_1778333583200.png",
     body: "The empty seats of the pandemic era forced a radical rethink. Today, Broadway is not just a street in Manhattan; it is a globally accessible digital platform."
   },
   {
@@ -347,7 +347,7 @@ export const articles = [
     isHero: false,
     isEditorPick: false,
     pulseRank: null,
-    image: "/src/assets/images/regenerated_image_1778337186686.png",
+    image: "/images/regenerated_image_1778337186686.png",
     body: "The transition of MLS from a 'retirement league' to a 'development and export league' is complete. The influx of young stars from Brazil and Argentina has raised the technical floor of American soccer."
   }
 ];
