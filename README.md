@@ -3,9 +3,7 @@ The app serves as a "visual prototype" for a modern media house. It prioritizes 
 Live Demo - https://global-news-prototype.vercel.app/
 
 3. Main Features & Pages
-Dynamic Home Grid: A sophisticated multi-colum landing page t
-
-hat intelligently organizes hero sections, editor's picks, and regional spotlights.
+Dynamic Home Grid: A sophisticated multi-colum landing page that intelligently organizes hero sections, editor's picks, and regional spotlights.
 Regional Desks: Specialized navigation for India, Americas, Europe, Africa, and Asia, featuring nested sub-region filtering (e.g., North America, South Asia).
 Live Updates (Pulse): A real-time, time-synchronized news ticker that tracks breaking global events with a font-mono IST (India Standard Time) display.
 Visual "Reels": A curated visual storytelling section that uses high-resolution imagery to showcase local perspectives from cities like Mumbai, Tokyo, and Nairobi.
