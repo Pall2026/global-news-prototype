@@ -1,5 +1,6 @@
 1. Core Concept
 The app serves as a "visual prototype" for a modern media house. It prioritizes clarity, regional authority, and a "clean" editorial aesthetic. The name "Bharat Lens" signifies its focus on looking at the world through an Indian and broader Global South perspective, often highlighting stories that traditional Western media might relegate to footnotes.
+
 Live Demo - https://global-news-prototype.vercel.app/
 
 3. Main Features & Pages
