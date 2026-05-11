@@ -1,8 +1,9 @@
 import { useTheme } from '../context/ThemeContext';
-import { Sun, Moon, ChevronDown, ChevronRight, Menu, X, Twitter, Facebook, Mail, Phone, Youtube, Instagram, Play, Bookmark, Share2 } from 'lucide-react';
+import { Sun, Moon, ChevronDown, ChevronRight, Menu, X, Twitter, Facebook, Mail, Phone, Youtube, Instagram, Play, Bookmark, Share2, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation, useParams, useNavigate } from 'react-router-dom';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
+import { articles } from '../data/articles';
 
 const TOPICS = [
   { label: 'Politics', slug: 'politics' },
@@ -58,6 +59,8 @@ const NAVIGATION = [
 ];
 
 export function Header() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   return (
     <header id="main-header" className="sticky top-0 z-50 w-full bg-sand/90 backdrop-blur-md border-b border-ink/10 transition-colors duration-200">
       <div className="max-w-[1100px] mx-auto px-6 h-16 flex items-center justify-between">
@@ -68,11 +71,181 @@ export function Header() {
             <NavDropdown key={item.slug} item={item} />
           ))}
         </nav>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <button 
+            onClick={() => setIsSearchOpen(true)}
+            className="p-2.5 text-ink hover:text-clay hover:bg-clay/5 rounded-full transition-all group"
+            title="Search Articles"
+          >
+            <Search className="w-5 h-5 group-hover:scale-110 transition-transform" />
+          </button>
           <ThemesMenu />
         </div>
       </div>
+      
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
+  );
+}
+
+function SearchModal({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) {
+  const [query, setQuery] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isOpen) {
+      inputRef.current?.focus();
+      document.body.style.overflow = 'hidden';
+      
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') onClose();
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = 'unset';
+      };
+    }
+  }, [isOpen, onClose]);
+
+  const results = useMemo(() => {
+    if (!query.trim()) return [];
+    const q = query.toLowerCase().trim();
+    
+    // Explicit country list for strict filtering
+    const commonCountries = ['india', 'bangladesh', 'brazil', 'kenya', 'nigeria', 'usa', 'united states'];
+    const isCountrySearch = commonCountries.includes(q);
+
+    return articles.filter(article => {
+      const countryValue = article.country?.toLowerCase() || '';
+      const headlineValue = article.headline.toLowerCase();
+      const topicValue = article.topic.toLowerCase();
+      const dekValue = article.dek.toLowerCase();
+
+      // If user types a specific country name, we filter strictly to that country
+      if (isCountrySearch) {
+        return countryValue === q || (q === 'usa' && countryValue === 'united states');
+      }
+
+      // General search: matches headline, country, topic, or dek
+      return headlineValue.includes(q) || 
+             countryValue.includes(q) || 
+             topicValue.includes(q) || 
+             dekValue.includes(q);
+    }).slice(0, 8);
+  }, [query]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[100] flex items-start justify-center pt-24 px-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-ink/40 backdrop-blur-sm"
+          />
+          <motion.div
+            initial={{ opacity: 0, y: -20, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.98 }}
+            className="relative w-full max-w-[700px] bg-sand border border-ink/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] rounded-2xl overflow-hidden"
+          >
+            <div className="p-4 border-b border-ink/10 flex items-center gap-4">
+              <Search className="w-5 h-5 text-ink/40 ml-2" />
+              <input
+                ref={inputRef}
+                type="text"
+                placeholder="Search headlines, countries, or topics..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="flex-1 bg-transparent border-none outline-none text-[18px] text-ink placeholder:text-ink/30 h-12"
+              />
+              <button 
+                onClick={onClose}
+                className="p-2 text-ink/40 hover:text-clay transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="max-h-[60vh] overflow-y-auto overflow-x-hidden">
+              {results.length > 0 ? (
+                <div className="p-2">
+                  <div className="px-4 py-3 text-[10px] font-black uppercase tracking-[0.2em] text-ink/40">
+                    Results
+                  </div>
+                  {results.map((article) => (
+                    <Link
+                      key={article.id}
+                      to={`/article/${article.slug}`}
+                      onClick={onClose}
+                      className="flex gap-4 p-4 hover:bg-clay/5 rounded-xl transition-all group"
+                    >
+                      {article.image && (
+                        <div className="w-24 h-16 shrink-0 bg-ink/5 rounded overflow-hidden">
+                          <img 
+                            src={article.image} 
+                            alt="" 
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-[9px] font-black uppercase tracking-widest text-clay">{article.topic}</span>
+                          {article.country && (
+                            <>
+                              <span className="w-1 h-1 rounded-full bg-clay/20" />
+                              <span className="text-[9px] font-bold uppercase tracking-widest text-ink/40">{article.country}</span>
+                            </>
+                          )}
+                        </div>
+                        <h4 className="text-[16px] font-bold text-ink leading-tight group-hover:text-clay transition-colors truncate">
+                          {article.headline}
+                        </h4>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              ) : query.trim() ? (
+                <div className="py-20 text-center">
+                  <p className="text-[14px] italic text-ink/40">No matches found for "{query}"</p>
+                </div>
+              ) : (
+                <div className="p-8">
+                  <div className="text-[10px] font-black uppercase tracking-[0.2em] text-ink/40 mb-6">
+                    Trending Topics
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {['India', 'Bangladesh', 'Technology', 'Climate', 'Global South'].map(t => (
+                      <button 
+                        key={t}
+                        onClick={() => setQuery(t)}
+                        className="px-4 py-2 bg-ink/[0.03] hover:bg-clay/10 rounded-full text-[13px] font-bold text-ink/70 hover:text-clay transition-all"
+                      >
+                        {t}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <div className="p-4 bg-ink/[0.02] border-t border-ink/10 flex items-center justify-between">
+              <div className="flex items-center gap-4 text-[10px] font-bold text-ink/40 uppercase tracking-widest">
+                <span className="flex items-center gap-1"><span className="px-1.5 py-0.5 border border-ink/10 rounded-sm bg-white">ESC</span> Close</span>
+                <span className="flex items-center gap-1"><span className="px-1.5 py-0.5 border border-ink/10 rounded-sm bg-white">↵</span> Select</span>
+              </div>
+              <div className="text-[10px] font-black italic text-clay">Bharat Lens Search</div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
   );
 }
 
@@ -819,3 +992,4 @@ export function Dateline({ filed }: { filed: { city: string, date: string } }) {
     </div>
   );
 }
+
