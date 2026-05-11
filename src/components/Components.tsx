@@ -559,12 +559,12 @@ export function VisualReels() {
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {[
-            { id: '1590457121703-a13ea2dc5305', label: 'Dhaka Streets', country: 'Bangladesh', localPath: '/src/assets/images/regenerated_image_1778330268088.png' },
-            { id: '1518173946601-bbd1d27a432a', label: 'Mumbai Harbor', country: 'India', localPath: '/src/assets/images/regenerated_image_1778330271450.png' },
-            { id: '1531390844011-f19edf46713e', label: 'Tokyo Rain', country: 'Japan', localPath: '/src/assets/images/regenerated_image_1778330274846.png' },
-            { id: '1504608524841-42fe6f032b4b', label: 'Nairobi Market', country: 'Kenya', localPath: '/src/assets/images/regenerated_image_1778336885523.png' },
-            { id: '1504150537657-6186ee1bf5f8', label: 'Lagos Transit', country: 'Nigeria', localPath: '/src/assets/images/regenerated_image_1778330276998.png' },
-            { id: '1533105079780-92b9be482077', label: 'Seoul Lights', country: 'South Korea', localPath: '/src/assets/images/regenerated_image_1778330279278.png' }
+            { id: '1590457121703-a13ea2dc5305', label: 'Dhaka Streets', country: 'Bangladesh', localPath: '/images/regenerated_image_1778330268088.png' },
+            { id: '1518173946601-bbd1d27a432a', label: 'Mumbai Harbor', country: 'India', localPath: '/images/regenerated_image_1778330271450.png' },
+            { id: '1531390844011-f19edf46713e', label: 'Tokyo Rain', country: 'Japan', localPath: '/images/regenerated_image_1778330274846.png' },
+            { id: '1504608524841-42fe6f032b4b', label: 'Nairobi Market', country: 'Kenya', localPath: '/images/regenerated_image_1778336885523.png' },
+            { id: '1504150537657-6186ee1bf5f8', label: 'Lagos Transit', country: 'Nigeria', localPath: '/images/regenerated_image_1778330276998.png' },
+            { id: '1533105079780-92b9be482077', label: 'Seoul Lights', country: 'South Korea', localPath: '/images/regenerated_image_1778330279278.png' }
           ].map((reel) => (
             <div key={reel.id} className="relative aspect-[9/16] group cursor-pointer overflow-hidden rounded-sm">
               <img 
